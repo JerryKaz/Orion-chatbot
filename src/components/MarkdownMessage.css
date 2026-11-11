@@ -1,0 +1,138 @@
+.markdown {
+  white-space: normal;
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+.markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown .table-wrapper,
+.markdown .code-block {
+  margin: 0 0 10px;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 22px;
+}
+
+.markdown li + li {
+  margin-top: 3px;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  margin: 14px 0 6px;
+  font-size: 1.05em;
+  line-height: 1.3;
+}
+
+.markdown a {
+  color: var(--brand-strong);
+  text-underline-offset: 2px;
+}
+
+.markdown blockquote {
+  padding-left: 12px;
+  border-left: 3px solid var(--brand);
+  color: var(--text-muted);
+}
+
+.markdown :not(pre) > code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.9em;
+}
+
+.code-block {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #0f1714;
+  color: #e3ece7;
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #1b2622;
+  font-size: 12px;
+  color: #9fb1a8;
+}
+
+.code-block-header button {
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.code-block-header button:hover {
+  color: #fff;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.markdown table {
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.markdown th,
+.markdown td {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.markdown th {
+  background: var(--surface-2);
+}
+
+/* Blinking caret while the reply streams in. */
+.markdown.is-streaming > :last-child::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--brand);
+  animation: caret-blink 1s steps(2) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+:root[data-theme='dark'] .markdown :not(pre) > code {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+:root[data-theme='dark'] .code-block {
+  border: 1px solid var(--border);
+}

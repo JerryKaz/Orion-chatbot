@@ -1,0 +1,175 @@
+.tour-root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.tour-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* Centred steps (no target) dim the whole page. */
+.tour-overlay.is-dimmed {
+  background: rgba(8, 14, 11, 0.6);
+  animation: tour-fade 0.2s ease both;
+}
+
+/* A transparent box whose huge shadow dims everything around the target. */
+.tour-spotlight {
+  position: fixed;
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 3px var(--brand),
+    0 0 0 9999px rgba(8, 14, 11, 0.6);
+  pointer-events: none;
+  transition: top 0.3s ease, left 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.tour-tooltip {
+  position: fixed;
+  width: min(340px, calc(100vw - 24px));
+  padding: 18px 18px 14px;
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  animation: tour-pop 0.22s ease both;
+}
+
+.tour-tooltip.side-center {
+  text-align: center;
+}
+
+/* Arrow pointing at the highlighted element. */
+.tour-tooltip.side-bottom::before,
+.tour-tooltip.side-top::before {
+  content: '';
+  position: absolute;
+  left: var(--arrow-left);
+  width: 14px;
+  height: 14px;
+  background: var(--surface);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.tour-tooltip.side-bottom::before {
+  top: -7px;
+}
+
+.tour-tooltip.side-top::before {
+  bottom: -7px;
+}
+
+.tour-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+  box-shadow: var(--shadow);
+}
+
+.tour-progress {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--brand-strong);
+}
+
+.tour-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.tour-body {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+
+.tour-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.side-center .tour-footer {
+  flex-direction: column;
+}
+
+.tour-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.tour-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.tour-dots span.is-active {
+  width: 18px;
+  background: var(--brand);
+}
+
+.tour-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.tour-buttons button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.tour-skip,
+.tour-back {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.tour-skip:hover,
+.tour-back:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.tour-next {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+}
+
+.tour-next:hover {
+  background: var(--brand-strong);
+}
+
+@keyframes tour-fade {
+  from { opacity: 0; }
+}
+
+@keyframes tour-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+}
+
+:root[data-theme='dark'] .tour-tooltip {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+:root[data-theme='dark'] .tour-tooltip::before {
+  background: var(--surface-2);
+}
