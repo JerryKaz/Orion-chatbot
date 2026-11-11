@@ -1,8 +1,8 @@
-# Chat with Ama 💬
+# Orion: AI Chat Assistant 🌌
 
 An AI chat assistant built with React, Vite and Express, powered by Google Gemini. It streams replies in real time, keeps multiple conversations, and still works offline with built-in skills when no AI key is set.
 
-![Ama answering a question with formatted Markdown, a code block and a table](docs/screenshots/chat-light.png)
+![Orion answering a question with formatted Markdown, a code block and a table](docs/screenshots/chat-light.png)
 
 ## Screenshots
 

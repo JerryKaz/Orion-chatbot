@@ -1,6 +1,6 @@
 import { Chatbot } from 'supersimpledev';
 
-export const BOT_NAME = 'Ama';
+export const BOT_NAME = 'Orion';
 
 const JOKES = [
   "Why do programmers prefer dark mode? Because light attracts bugs.",

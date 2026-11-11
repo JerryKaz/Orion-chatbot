@@ -14,7 +14,7 @@ const API_KEY = process.env.GEMINI_API_KEY;
 
 const MAX_HISTORY = 30; // messages sent to the model per request
 const MAX_MESSAGE_CHARS = 4000;
-const BOT_NAME = 'Ama';
+const BOT_NAME = 'Orion';
 
 const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
 const app = express();

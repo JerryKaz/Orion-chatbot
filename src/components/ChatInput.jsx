@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { BOT_NAME } from '../bot/botBrain';
 import './ChatInput.css';
 
 const SpeechRecognition =
@@ -71,7 +72,7 @@ export function ChatInput({ onSend, onStop, isBusy, canStop }) {
       <textarea
         ref={inputRef}
         rows={1}
-        placeholder={isListening ? 'Listening…' : 'Message Ama…'}
+        placeholder={isListening ? 'Listening…' : `Message ${BOT_NAME}…`}
         onChange={(e) => setInputText(e.target.value)}
         onKeyDown={handleKeyDown}
         value={inputText}
