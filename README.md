@@ -2,6 +2,18 @@
 
 An AI chat assistant built with React, Vite and Express, powered by Google Gemini. It streams replies in real time, keeps multiple conversations, and still works offline with built-in skills when no AI key is set.
 
+![Ama answering a question with formatted Markdown, a code block and a table](docs/screenshots/chat-light.png)
+
+## Screenshots
+
+| Dark mode | Guided tour for first-time users |
+| :---: | :---: |
+| ![Dark mode](docs/screenshots/chat-dark.png) | ![Guided tour](docs/screenshots/guided-tour.png) |
+
+| Mobile: welcome | Mobile: chat | Mobile: conversations |
+| :---: | :---: | :---: |
+| <img src="docs/screenshots/mobile-welcome.png" alt="Mobile welcome screen" width="250"> | <img src="docs/screenshots/mobile-chat.png" alt="Mobile chat" width="250"> | <img src="docs/screenshots/mobile-sidebar.png" alt="Mobile conversation list" width="250"> |
+
 ## Features
 
 **AI**

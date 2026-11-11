@@ -136,3 +136,10 @@
 :root[data-theme='dark'] .code-block {
   border: 1px solid var(--border);
 }
+
+/* Don't split identifiers like `useState` across lines inside tables; the table scrolls instead. */
+.markdown td code,
+.markdown th code {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
